@@ -7,21 +7,5 @@
   },
   "logger": {
     "level": "info"
-  },
-  "jobServiceUrl": "",
-  "heartbeat": {
-    "enabled": true,
-    "failedDurationMS": 30,
-    "serviceUrl": ""
-  },
-  "updateTime": {
-    "enabled": true,
-    "failedDurationSec": 300,
-    "taskTypes": []
-  },
-  "httpRetry": {
-    "attempts": 3,
-    "delay": "exponential",
-    "shouldResetTimeout": true
   }
 }
