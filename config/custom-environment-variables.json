@@ -4,5 +4,27 @@
   },
   "logger": {
     "level": "LOG_LEVEL"
+  },
+  "service": {
+    "provider": "FILE_PROVIDER"
+  },
+  "FS": {
+    "sourceFilePath": "SOURCE_FILE_PATH",
+    "destinationFilePath": "DESTIONATION_FILE_PATH"
+  },
+  "S3": {
+    "endpoint": "AWS_ENDPOINT",
+    "accessKeyId": "AWS_ACCESS_KEY_ID",
+    "secretAccessKey": "AWS_SECRET_ACCESS_KEY",
+    "bucket": "AWS_BUCKET",
+    "fileKey": "AWS_FILE_KEY",
+    "forcePathStyle": "AWS_FORCE_PATH_STYLE"
+  },
+  "PG": {
+    "host": "PG_HOST_IP",
+    "database": "PG_DATABASE",
+    "user": "PG_USER",
+    "password": "PG_PASSWORD",
+    "port": "PG_PORT"
   }
 }

@@ -7,5 +7,27 @@
   },
   "logger": {
     "level": "info"
+  },
+  "service": {
+    "provider": "db"
+  },
+  "FS": {
+    "sourceFilePath": "/home/shlomiko/Desktop/parameters.txt",
+    "destinationFilePath": "/media/shlomiko/3180c99e-5d8d-43ac-b594-f4ed4d2be27c1/test/pp.txt"
+  },
+  "S3": {
+    "endpoint": "http://localhost:9000",
+    "accessKeyId": "minioadmin",
+    "secretAccessKey": "minioadmin",
+    "bucket": "dtm",
+    "fileKey": "mapproxy.yaml",
+    "forcePathStyle": true
+  },
+  "DB": {
+    "host": "10.8.1.15",
+    "user": "postgres",
+    "database": "mapproxy-config-db-test",
+    "password": "postgres",
+    "port": 5432
   }
 }
