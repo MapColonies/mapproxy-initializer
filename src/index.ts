@@ -15,8 +15,6 @@ async function run(logger: Logger): Promise<void> {
     const provider = container.resolve(Services.FILE_PROVIDER);
     const initializer = new Initializer(provider as IFileProvider);
     await initializer.provide();
-    //const provider = new DBProvider();
-    //await provider.getFile()
   } catch (err) {
     const error = err as Error;
     logger.error(error.message);

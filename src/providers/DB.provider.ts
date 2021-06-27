@@ -31,7 +31,7 @@ export class DBProvider implements IFileProvider {
       const pgClient = new Client(this.pgClientConfig);
       await pgClient.connect();
 
-      const jsonContent = await (await pgClient.query('SELECT * FROM config limit 1')).rows[0];
+      const jsonContent = await (await pgClient.query('SELECT * FROM configuration ORDER BY timestamp DESC limit 1')).rows[0];
       const yamlContent = convertJsonToYaml(jsonContent);
       const destination = this.fsConfig.destinationFilePath;
       await fsp.writeFile(destination, yamlContent);
