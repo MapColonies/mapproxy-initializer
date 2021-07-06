@@ -3,7 +3,7 @@
 import { dump } from 'js-yaml';
 
 // read json object and convert it into a yaml content
-export function convertJsonToYaml(json: Record<string, any>): string {
+export function convertJsonToYaml(json: Record<string, unknown>): string {
   try {
     const yamlContent: string = dump(json, { noArrayIndent: true });
     return yamlContent;

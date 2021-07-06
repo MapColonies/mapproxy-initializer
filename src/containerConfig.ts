@@ -5,7 +5,7 @@ import jsLogger, { LoggerOptions } from '@map-colonies/js-logger';
 import { Tracing } from '@map-colonies/telemetry';
 import { Services } from './common/constants';
 import { IFileProvider, IServiceConfig } from './common/interfaces';
-import { getProvider } from './common/utilities/getProvider';
+import { GetProvider } from './common/utilities/getProvider';
 
 function registerExternalValues(tracing: Tracing): void {
   const loggerConfig = config.get<LoggerOptions>('logger');
@@ -18,7 +18,7 @@ function registerExternalValues(tracing: Tracing): void {
   container.register(Services.TRACER, { useValue: tracer });
   container.register(Services.FILE_PROVIDER, {
     useFactory: (): IFileProvider => {
-      return getProvider(serverConfig.provider);
+      return GetProvider(serverConfig.provider);
     },
   });
   container.register('onSignal', {

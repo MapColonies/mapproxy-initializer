@@ -13,18 +13,25 @@
     "destinationFilePath": "DESTIONATION_FILE_PATH"
   },
   "S3": {
-    "endpoint": "AWS_ENDPOINT",
-    "accessKeyId": "AWS_ACCESS_KEY_ID",
-    "secretAccessKey": "AWS_SECRET_ACCESS_KEY",
-    "bucket": "AWS_BUCKET",
-    "fileKey": "AWS_FILE_KEY",
-    "forcePathStyle": "AWS_FORCE_PATH_STYLE"
+    "endpoint": "S3_ENDPOINT",
+    "accessKeyId": "S3_ACCESS_KEY_ID",
+    "secretAccessKey": "S3_SECRET_ACCESS_KEY",
+    "bucket": "S3_BUCKET",
+    "fileKey": "S3_FILE_KEY",
+    "forcePathStyle": "S3_FORCE_PATH_STYLE"
   },
-  "PG": {
-    "host": "PG_HOST_IP",
-    "database": "PG_DATABASE",
-    "user": "PG_USER",
-    "password": "PG_PASSWORD",
-    "port": "PG_PORT"
+  "DB": {
+    "host": "DB_HOST",
+    "database": "DB_NAME",
+    "user": "DB_USER",
+    "password": "DB_PASSWORD",
+    "port": "DB_PORT",
+    "sslEnabled": "DB_SSL_ENABLED",
+    "rejectUnauthorized": "DB_REJECT_UNAUTHORIZED",
+    "sslPaths": {
+      "ca": "DB_SSL_PATH_CA",
+      "key": "DB_SSL_PATH_KEY",
+      "cert": "DB_SSL_PATH_CERT"
+    }
   }
 }

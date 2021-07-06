@@ -1,7 +1,6 @@
 /* eslint-disable import/first */
 // this import must be called before the first import of tsyring
 import 'reflect-metadata';
-import config from 'config';
 import { Tracing } from '@map-colonies/telemetry';
 import { Logger } from '@map-colonies/js-logger';
 import { container } from 'tsyringe';

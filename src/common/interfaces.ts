@@ -34,10 +34,19 @@ export interface IFSConfig {
   destinationFilePath: string;
 }
 
+export interface IPGSSL {
+  ca: string;
+  key: string;
+  cert: string;
+}
+
 export interface IPGConfig {
   host: string;
   user: string;
   database: string;
   password: string;
   port: number;
+  sslEnabled: boolean;
+  rejectUnauthorized: boolean;
+  sslPaths: IPGSSL;
 }

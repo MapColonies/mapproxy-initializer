@@ -3,8 +3,8 @@ import { FSProvider } from '../../providers/FS.provider';
 import { S3Provider } from '../../providers/S3.provider';
 import { IFileProvider } from '../interfaces';
 
-export const getProvider = (provider: string): IFileProvider => {
-  switch (provider) {
+export const GetProvider = (provider: string): IFileProvider => {
+  switch (provider.toLowerCase()) {
     case 'fs':
       return new FSProvider();
     case 's3':
