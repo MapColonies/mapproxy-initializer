@@ -1,8 +1,5 @@
 import { Providers } from '../../src/enums';
 import { GetProvider } from '../../src/common/utilities/getProvider';
-import { DBProvider } from '../../src/providers/DB.provider';
-import { FSProvider } from '../../src/providers/FS.provider';
-import { S3Provider } from '../../src/providers/S3.provider';
 
 jest.mock('../../src/providers/DB.provider');
 jest.mock('../../src/providers/FS.provider');

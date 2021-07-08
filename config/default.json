@@ -16,7 +16,7 @@
     "destinationFilePath": "/etc/mapproxy.yaml"
   },
   "S3": {
-    "endpoint": "http://10.45.128.18:9000",
+    "endpoint": "http://localhost:9000",
     "accessKeyId": "minioadmin",
     "secretAccessKey": "minioadmin",
     "bucket": "mapproxy",
