@@ -25,9 +25,8 @@ export class DBProvider implements IFileProvider {
   }
 
   private createConnectionOptions(dbConfig: IPGConfig): ClientConfig {
-    let pgConnection: ClientConfig;
     const { sslEnabled, sslPaths, ...connectionOptions } = dbConfig;
-    pgConnection = connectionOptions;
+    const pgConnection: ClientConfig = connectionOptions;
     if (sslEnabled) {
       pgConnection.ssl = { key: readFileSync(sslPaths.key), cert: readFileSync(sslPaths.cert), ca: readFileSync(sslPaths.ca) };
     }
@@ -39,12 +38,13 @@ export class DBProvider implements IFileProvider {
     try {
       await pgClient.connect();
 
-      const jsonContent = (await pgClient.query('SELECT * FROM config ORDER BY updated_time DESC limit 1')).rows[0];
-      const yamlContent = convertJsonToYaml(jsonContent);
+      const jsonContent = (await pgClient.query('SELECT data FROM config ORDER BY updated_time DESC limit 1')).rows[0];
+      const yamlContent = convertJsonToYaml(jsonContent?.data);
       const destination = this.fsConfig.destinationFilePath;
       await fsPromise.writeFile(destination, yamlContent);
     } catch (error) {
-      this.logger.error(`Database failed to provide file. ${JSON.stringify(error as Error)}`);
+      this.logger.error(`Database failed to provide file.`);
+      throw error;
     } finally {
       await pgClient.end();
     }

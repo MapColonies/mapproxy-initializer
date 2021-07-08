@@ -40,7 +40,8 @@ export class S3Provider implements IFileProvider {
       const destination = this.fsConfig.destinationFilePath;
       await fsPromise.writeFile(destination, content);
     } catch (error) {
-      this.logger.error(`S3 failed to provide file. ${JSON.stringify(error as Error)}`);
+      this.logger.error(`S3 failed to provide file.`);
+      throw error;
     }
   }
 }

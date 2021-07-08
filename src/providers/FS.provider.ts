@@ -19,7 +19,8 @@ export class FSProvider implements IFileProvider {
       const destination = this.fsConfig.destinationFilePath;
       await fsPromise.copyFile(source, destination);
     } catch (error) {
-      this.logger.error(`Failed to copy source file. ${JSON.stringify(error as Error)}`);
+      this.logger.error(`Failed to copy source file.`);
+      throw error;
     }
   }
 }
