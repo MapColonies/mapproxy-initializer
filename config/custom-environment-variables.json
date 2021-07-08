@@ -6,7 +6,7 @@
     "level": "LOG_LEVEL"
   },
   "service": {
-    "provider": "FILE_PROVIDER"
+    "provider": "CONFIG_PROIVDER"
   },
   "FS": {
     "sourceFilePath": "SOURCE_FILE_PATH",

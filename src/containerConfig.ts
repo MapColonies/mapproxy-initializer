@@ -4,7 +4,7 @@ import { logMethod } from '@map-colonies/telemetry';
 import jsLogger, { LoggerOptions } from '@map-colonies/js-logger';
 import { Tracing } from '@map-colonies/telemetry';
 import { Services } from './common/constants';
-import { IFileProvider, IServiceConfig } from './common/interfaces';
+import { IConfigProvider, IServiceConfig } from './common/interfaces';
 import { GetProvider } from './common/utilities/getProvider';
 
 function registerExternalValues(tracing: Tracing): void {
@@ -16,8 +16,8 @@ function registerExternalValues(tracing: Tracing): void {
   container.register(Services.LOGGER, { useValue: logger });
   const tracer = tracing.start();
   container.register(Services.TRACER, { useValue: tracer });
-  container.register(Services.FILE_PROVIDER, {
-    useFactory: (): IFileProvider => {
+  container.register(Services.CONFIG_PROIVDER, {
+    useFactory: (): IConfigProvider => {
       return GetProvider(serverConfig.provider);
     },
   });

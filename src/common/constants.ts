@@ -8,5 +8,5 @@ export enum Services {
   CONFIG = 'IConfig',
   TRACER = 'TRACER',
   METER = 'METER',
-  FILE_PROVIDER = 'FILE_PROVIDER',
+  CONFIG_PROIVDER = 'CONFIG_PROIVDER',
 }

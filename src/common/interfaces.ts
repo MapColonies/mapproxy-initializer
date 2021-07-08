@@ -12,7 +12,7 @@ export interface OpenApiConfig {
   uiPath: string;
 }
 
-export interface IFileProvider {
+export interface IConfigProvider {
   getFile: () => Promise<void>;
 }
 

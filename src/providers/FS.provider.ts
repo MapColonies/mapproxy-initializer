@@ -2,9 +2,9 @@ import { promises as fsPromise } from 'fs';
 import { Logger } from '@map-colonies/js-logger';
 import { container } from 'tsyringe';
 import { Services } from '../common/constants';
-import { IConfig, IFileProvider, IFSConfig } from '../common/interfaces';
+import { IConfig, IConfigProvider, IFSConfig } from '../common/interfaces';
 
-export class FSProvider implements IFileProvider {
+export class FSProvider implements IConfigProvider {
   private readonly config: IConfig;
   private readonly fsConfig: IFSConfig;
   private readonly logger: Logger;

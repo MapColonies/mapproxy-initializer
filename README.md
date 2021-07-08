@@ -1,18 +1,32 @@
-# Map Colonies Task Liberator
-
-----------------------------------
-![badge-alerts-lgtm](https://img.shields.io/lgtm/alerts/github/MapColonies/Task-Liberator?style=for-the-badge)
-![grade-badge-lgtm](https://img.shields.io/lgtm/grade/javascript/github/MapColonies/Task-Liberator?style=for-the-badge)
-![snyk](https://img.shields.io/snyk/vulnerabilities/github/MapColonies/Task-Liberator?style=for-the-badge)
-----------------------------------
-
-this is a job that when run updates "in-progress" tasks in the job management service to "pending" and increase their attempt count, so the can be retried by the relevant task worker.
+# Map Colonies Mapproxy Initializer
 
 
-### task release conditions
-- release base on heartbeat: releases tasks for whom the worker did not sent heartbeat for longer the the configured ```HEARTBEAT_FAILED_DURATION``` second
-  - can be toggled with the ```HEARTBEAT_ENABLED``` configuration
-  - required active heartbeat logging service at ```HEARTBEAT_SERVICE_URL```
-- release base on last update time: releases tasks that was not updated for longer the the configured ```UPDATE_TIME_FAILED_DURATION``` second
-  - can be toggled with the ```UPDATE_TIME_ENABLED``` configuration
+A small service that is supposed to retrieve a mapproxy configuration file (mapproxy.yaml) and deliver it to mapproxy. 
 
+## Environment Variables
+#### Global Environment Variables
+- `OPENAPI_FILE_PATH`
+- `LOG_LEVEL`
+#### Service Specific
+- `CONFIG_PROVIDER` - fs (file system) | s3 | db
+- `SOURCE_FILE_PATH` - location of source file to copy from, only use for when working against FS.
+- `DESTIONATION_FILE_PATH` - location of target file (the folder in which we save the retrieved file).
+#### S3 (if working against s3)
+- `S3_ENDPOINT` 
+- `S3_ACCESS_KEY_ID`
+- `S3_SECRET_ACCESS_KEY`
+- `S3_BUCKET`
+- `S3_FILE_KEY` - the name of the file in the s3 bucket to be downloaded.
+- `S3_FORCE_PATH_STYLE`
+
+#### DB (if working against DB)
+- `DB_HOST`
+- `DB_NAME`
+- `DB_USER`
+- `DB_PASSWORD`
+- `DB_PORT`
+- `DB_SSL_ENABLED` - if DB has SSL configured
+- `DB_REJECT_UNAUTHORIZED`
+- `DB_SSL_PATH_CA` - path of CA file (SSL)
+- `DB_SSL_PATH_KEY` - path of KEY file (SSL)
+- `DB_SSL_PATH_CERT` - path of CERT file (SSL)

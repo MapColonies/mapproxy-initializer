@@ -3,9 +3,9 @@ import { S3 } from 'aws-sdk';
 import { container } from 'tsyringe';
 import { Logger } from '@map-colonies/js-logger';
 import { Services } from '../common/constants';
-import { IConfig, IFileProvider, IFSConfig, IS3Config } from '../common/interfaces';
+import { IConfig, IConfigProvider, IFSConfig, IS3Config } from '../common/interfaces';
 
-export class S3Provider implements IFileProvider {
+export class S3Provider implements IConfigProvider {
   private readonly s3Config: IS3Config;
   private readonly fsConfig: IFSConfig;
   private readonly s3: S3;

@@ -7,12 +7,12 @@ import { container } from 'tsyringe';
 import { Services } from './common/constants';
 import { registerExternalValues } from './containerConfig';
 import { Initializer } from './initializer';
-import { IFileProvider } from './common/interfaces';
+import { IConfigProvider } from './common/interfaces';
 
 async function run(logger: Logger): Promise<void> {
   try {
-    const provider = container.resolve(Services.FILE_PROVIDER);
-    const initializer = new Initializer(provider as IFileProvider);
+    const provider = container.resolve(Services.CONFIG_PROIVDER);
+    const initializer = new Initializer(provider as IConfigProvider);
     await initializer.provide();
   } catch (err) {
     const error = err as Error;

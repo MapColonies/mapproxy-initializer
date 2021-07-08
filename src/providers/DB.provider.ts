@@ -6,10 +6,10 @@ import { Client, ClientConfig } from 'pg';
 import { container } from 'tsyringe';
 import { Logger } from '@map-colonies/js-logger';
 import { Services } from '../common/constants';
-import { IConfig, IFileProvider, IFSConfig, IPGConfig } from '../common/interfaces';
+import { IConfig, IConfigProvider, IFSConfig, IPGConfig } from '../common/interfaces';
 import { convertJsonToYaml } from '../common/utilities/yamlConvertor';
 
-export class DBProvider implements IFileProvider {
+export class DBProvider implements IConfigProvider {
   private readonly config: IConfig;
   private readonly fsConfig: IFSConfig;
   private readonly pgConfig: IPGConfig;
