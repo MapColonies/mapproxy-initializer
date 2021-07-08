@@ -1,0 +1,40 @@
+{
+  "openapiConfig": {
+    "filePath": "./openapi3.yaml",
+    "basePath": "/docs",
+    "rawPath": "/api",
+    "uiPath": "/api"
+  },
+  "logger": {
+    "level": "info"
+  },
+  "service": {
+    "provider": "db"
+  },
+  "FS": {
+    "sourceFilePath": "/etc/file.yaml",
+    "destinationFilePath": "/etc/mapproxy.yaml"
+  },
+  "S3": {
+    "endpoint": "http://localhost:9000",
+    "accessKeyId": "minioadmin",
+    "secretAccessKey": "minioadmin",
+    "bucket": "mapproxy",
+    "fileKey": "mapproxy.yaml",
+    "forcePathStyle": true
+  },
+  "DB": {
+    "host": "127.0.0.1",
+    "user": "postgres",
+    "database": "mapproxy-config",
+    "password": "postgres",
+    "port": 5432,
+    "sslEnabled": false,
+    "rejectUnauthorized": true,
+    "sslPaths": {
+      "ca": "",
+      "key": "",
+      "cert": ""
+    }
+  }
+}
