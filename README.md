@@ -1,7 +1,7 @@
 # Map Colonies Mapproxy Initializer
 
 
-A small service that is supposed to retrieve a mapproxy configuration file (mapproxy.yaml) and deliver it to mapproxy. 
+A job that retrieves a mapproxy configuration file (mapproxy.yaml) and deliver it to mapproxy. 
 
 ## Environment Variables
 #### Global Environment Variables

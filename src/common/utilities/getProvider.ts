@@ -12,6 +12,6 @@ export const GetProvider = (provider: string): IConfigProvider => {
     case 'db':
       return new DBProvider();
     default:
-      throw new Error('No suitalbe file provider was given.');
+      throw new Error(`Error: provider ${provider} is not a suitable provider.`);
   }
 };

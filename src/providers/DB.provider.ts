@@ -24,15 +24,6 @@ export class DBProvider implements IConfigProvider {
     this.pgClientConfig = this.createConnectionOptions(this.pgConfig);
   }
 
-  private createConnectionOptions(dbConfig: IPGConfig): ClientConfig {
-    const { sslEnabled, sslPaths, ...connectionOptions } = dbConfig;
-    const pgConnection: ClientConfig = connectionOptions;
-    if (sslEnabled) {
-      pgConnection.ssl = { key: readFileSync(sslPaths.key), cert: readFileSync(sslPaths.cert), ca: readFileSync(sslPaths.ca) };
-    }
-    return pgConnection;
-  }
-
   public async getFile(): Promise<void> {
     const pgClient = new Client(this.pgClientConfig);
     try {
@@ -48,5 +39,14 @@ export class DBProvider implements IConfigProvider {
     } finally {
       await pgClient.end();
     }
+  }
+
+  private createConnectionOptions(dbConfig: IPGConfig): ClientConfig {
+    const { sslEnabled, sslPaths, ...connectionOptions } = dbConfig;
+    const pgConnection: ClientConfig = connectionOptions;
+    if (sslEnabled) {
+      pgConnection.ssl = { key: readFileSync(sslPaths.key), cert: readFileSync(sslPaths.cert), ca: readFileSync(sslPaths.ca) };
+    }
+    return pgConnection;
   }
 }

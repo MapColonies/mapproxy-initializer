@@ -15,6 +15,7 @@ export class Initializer {
   public async provide(): Promise<void> {
     try {
       await this.configProvider.getFile();
+      /* eslint-disable @typescript-eslint/naming-convention */
       const serviceProvider = String(this.config.get('service.provider')).toUpperCase();
       this.logger.info(`A mapproxy configuration file was succesfully retrieved from ${serviceProvider}`);
     } catch (error) {
