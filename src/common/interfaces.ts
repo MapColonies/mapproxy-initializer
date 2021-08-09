@@ -50,3 +50,7 @@ export interface IPGConfig {
   rejectUnauthorized: boolean;
   sslPaths: IPGSSL;
 }
+
+export interface IUpdatedTimeFileContent {
+  updatedTime: Date;
+}
