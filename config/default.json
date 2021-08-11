@@ -11,9 +11,10 @@
   "service": {
     "provider": "db"
   },
+  "updatedTimeFileName": "updated_time.json",
   "FS": {
-    "sourceFilePath": "/etc/file.yaml",
-    "destinationFilePath": "/etc/mapproxy.yaml"
+    "sourceFilePath": "/soruce/path/mapproxy.yaml",
+    "destinationFilePath": "/dest/path/mapproxy.yaml"
   },
   "S3": {
     "endpoint": "http://localhost:9000",
